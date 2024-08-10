@@ -3,6 +3,7 @@ import { Article } from "../types";
 import { useRouter } from "next/navigation";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
+import SelectStatus from "./SelectStatus";
 
 type SingleTodoProps = {
   article: Article;
@@ -36,9 +37,7 @@ const SingleTodo = ({ article }: SingleTodoProps) => {
   return (
     <>
       <li className="flex justify-between bg-slate-100 mt-2">
-        <p className="flex-shrink-0 p-2 flex justify-center items-center">
-          {article.status.name}
-        </p>
+        <SelectStatus article={article} />
         <p className="flex-1 p-2">{article.text}</p>
         <p className="p-2">{formattedDate}</p>
         <EditButton openEdit={openEdit} id={article.id} />
