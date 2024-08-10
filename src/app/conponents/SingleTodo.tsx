@@ -1,8 +1,8 @@
-"use client";
-
 import React from "react";
 import { Article } from "../types";
 import { useRouter } from "next/navigation";
+import DeleteButton from "./DeleteButton";
+import EditButton from "./EditButton";
 
 type SingleTodoProps = {
   article: Article;
@@ -41,18 +41,8 @@ const SingleTodo = ({ article }: SingleTodoProps) => {
         </p>
         <p className="flex-1 p-2">{article.text}</p>
         <p className="p-2">{formattedDate}</p>
-        <button
-          onClick={() => openEdit(article.id)}
-          className="flex-shrink-0 p-2 bg-green-700 text-slate-100"
-        >
-          編集
-        </button>
-        <button
-          onClick={() => handleDelete(article.id)}
-          className="flex-shrink-0 p-2 bg-red-700 text-slate-100"
-        >
-          削除
-        </button>
+        <EditButton openEdit={openEdit} id={article.id} />
+        <DeleteButton handleDelete={handleDelete} id={article.id} />
       </li>
     </>
   );
