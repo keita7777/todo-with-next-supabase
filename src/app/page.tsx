@@ -2,6 +2,7 @@ import { useState } from "react";
 import TodoInput from "./conponents/TodoInput";
 import TodoList from "./conponents/TodoList";
 import TodoSort from "./conponents/TodoSort";
+import TodoListContainer from "./conponents/TodoListContainer";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <TodoSort />
       </div>
 
-      <TodoList />
+      <TodoListContainer />
     </main>
   );
 }

@@ -30,7 +30,6 @@ const EditPage = ({ params }: Props) => {
       }
       setText(data.text);
       setStatus(data.status.id);
-      console.log(data.status.id);
     };
 
     fetchData();
@@ -74,6 +73,13 @@ const EditPage = ({ params }: Props) => {
           />
           <button type="submit" className="bg-orange-200 px-3 text-black">
             更新
+          </button>
+          <button
+            onClick={() => router.push("/")}
+            type="button"
+            className="bg-red-600 px-3 text-slate-100"
+          >
+            キャンセル
           </button>
         </form>
       </div>
