@@ -30,6 +30,9 @@ const SingleTodo = ({ article }: SingleTodoProps) => {
     router.push(`/edit/${id}`);
   };
 
+  const createdAtDate = new Date(article.created_at);
+  const formattedDate = createdAtDate.toLocaleDateString();
+
   return (
     <>
       <li className="flex justify-between bg-slate-100 mt-2">
@@ -37,6 +40,7 @@ const SingleTodo = ({ article }: SingleTodoProps) => {
           {article.status.name}
         </p>
         <p className="flex-1 p-2">{article.text}</p>
+        <p className="p-2">{formattedDate}</p>
         <button
           onClick={() => openEdit(article.id)}
           className="flex-shrink-0 p-2 bg-green-700 text-slate-100"
